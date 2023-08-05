@@ -64,6 +64,7 @@ flutter:
     - assets/pfp/
     - assets/icons/
     - assets/images/
+    - assets/fruits/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
