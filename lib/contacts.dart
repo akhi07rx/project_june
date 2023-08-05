@@ -12,6 +12,7 @@ class contacts extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("CONTACTS"),
+        backgroundColor: const Color(0xFF8c95fd),
       ),
       body: ListView(
         children: const [
@@ -45,10 +46,6 @@ class contacts extends StatelessWidget {
               ),
             ),
           ),
-
-//leading: CircleAvatar(
-//       backgroundImage: AssetImage("assets/images/pizza.png"),
-//     ),
 
           Card(
             child: ListTile(
@@ -114,6 +111,7 @@ class contacts extends StatelessWidget {
                   SizedBox(width: 12.0),
                   Icon(
                     Icons.phone,
+                    //color: Color(0xff65bda0),
                     color: Color(0xFF4685FF),
                   ),
                 ],
