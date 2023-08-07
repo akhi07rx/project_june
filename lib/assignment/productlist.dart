@@ -55,6 +55,7 @@ class ListView_Separated extends StatelessWidget {
         ],
       ),
       body: ListView.separated(
+          shrinkWrap: true,
           itemBuilder: (context, index) {
             return SizedBox(
               height: 80, // Set the height of the card
