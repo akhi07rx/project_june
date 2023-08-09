@@ -34,6 +34,7 @@ dependencies:
   fluttertoast: ^8.2.2
   google_fonts: ^5.1.0
   flutter_staggered_grid_view: ^0.7.0
+  lottie: ^2.6.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -67,6 +68,7 @@ flutter:
     - assets/images/
     - assets/fruits/
     - assets/shopping/
+    - assets/animation/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
