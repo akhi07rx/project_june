@@ -50,7 +50,7 @@ class shrine extends StatelessWidget {
                       child: Column(
                         children: [
                           Container(
-                            height: 80,
+                            height: 180,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     fit: BoxFit.fitHeight,
