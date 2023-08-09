@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:project_june1/home.dart';
-import 'package:project_june1/signup%20page.dart';
 
 class Login2 extends StatefulWidget {
   @override
@@ -56,9 +54,9 @@ class _Login2State extends State<Login2> {
                     suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
-                            if(passvisibility == true){
+                            if (passvisibility == true) {
                               passvisibility = false;
-                            }else{
+                            } else {
                               passvisibility = true;
                             }
                           });
