@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: ListView(),
+    home: ListView2(),
   ));
 }
 
-class ListView extends StatelessWidget {
+class ListView2 extends StatelessWidget {
   var name = [
     'Gojo',
     'Geto',
@@ -46,15 +46,15 @@ class ListView extends StatelessWidget {
   ];
   var msg = [
     'sticker',
-    'long time no see',
-    'suii',
-    'hei',
-    'mone',
-    'sugalle',
-    'how is openheimer',
+    "Mount Fuji! His head is Mount Fuji!",
+    "I be fine",
+    "It's Not About Whether I Can. I Have To Do It.",
+    "I'm into girls like Jennifer Lawrence",
+    "Even a cursed spirit is bound to miss his arm",
+    'gojo is dead',
     'are u bzy',
-    'when is your next trip to usa',
-    'mere desh vaasiyom'
+    'hmmm',
+    'baka baka baka baka'
   ];
   @override
   Widget build(BuildContext context) {
@@ -64,11 +64,11 @@ class ListView extends StatelessWidget {
           actions: [
             const Icon(Icons.camera_alt_outlined),
             const SizedBox(
-              width: 20,
+              width: 10,
             ),
             const Icon(Icons.search),
             const SizedBox(
-              width: 20,
+              width: 5,
             ),
             PopupMenuButton(itemBuilder: (context) {
               return [
@@ -81,7 +81,7 @@ class ListView extends StatelessWidget {
               ];
             })
           ],
-          title: const Text('WhatsApp')),
+          title: const Text('Whatsapp')),
       body: ListView(
         children: List.generate(
             10,
