@@ -13,7 +13,17 @@ class Drawer_ex extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("My Profile"),
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Center(
+          child: Text(
+            "Famous Peoples",
+            style: TextStyle(color: Colors.black),
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        bottomOpacity: 0.0,
+        elevation: 0.0,
+        // backgroundColor: const Color(0xFFFFFFFF),
       ),
       drawer: Drawer(
         child: Container(
@@ -34,32 +44,43 @@ class Drawer_ex extends StatelessWidget {
             ),
           ), //color: Colors.amber,
           child: ListView(
-            padding: EdgeInsets.zero,
+            // padding: EdgeInsets.zero,
             children: const [
-              Material(
-                elevation: 0.0,
-                child: DrawerHeader(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      CircleAvatar(
-                        backgroundImage:
-                            NetworkImage("https://i.imgur.com/BoN9kdC.png"),
+              DrawerHeader(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    CircleAvatar(
+                      radius: 40,
+                      backgroundImage: NetworkImage(
+                        "https://akm-img-a-in.tosshub.com/businesstoday/images/assets/202302/0-5-sixteen_nine.jpg?size=948:533",
                       ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text("John Doe"),
-                          Text("Custom Text"),
-                        ],
-                      ),
-                    ],
-                  ),
+                    ),
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Sundar Pichai\n",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                        Text(
+                          "CEO of Alphabet INC",
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
               ListTile(
-                leading: Icon(Icons.home, color: Colors.white),
-                title: Text("Home", style: TextStyle(color: Colors.white)),
+                leading: Icon(
+                  Icons.home,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "Home",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
               ListTile(
                 leading:
