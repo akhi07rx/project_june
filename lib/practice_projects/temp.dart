@@ -36,23 +36,25 @@ class Drawer_ex extends StatelessWidget {
           child: ListView(
             padding: EdgeInsets.zero,
             children: const [
-              DrawerHeader(
+              Material(
                 elevation: 0.0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    CircleAvatar(
-                      backgroundImage:
-                          NetworkImage("https://i.imgur.com/BoN9kdC.png"),
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("John Doe"),
-                        Text("Custom Text"),
-                      ],
-                    ),
-                  ],
+                child: DrawerHeader(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CircleAvatar(
+                        backgroundImage:
+                            NetworkImage("https://i.imgur.com/BoN9kdC.png"),
+                      ),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text("John Doe"),
+                          Text("Custom Text"),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
               ListTile(
