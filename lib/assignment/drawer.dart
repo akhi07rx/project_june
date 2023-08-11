@@ -107,7 +107,7 @@ class Drawer_ex extends StatelessWidget {
                   color: Colors.white,
                 ),
                 title: Text(
-                  "space_dashboard_outlined",
+                  "Leads",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -117,17 +117,57 @@ class Drawer_ex extends StatelessWidget {
                   color: Colors.white,
                 ),
                 title: Text(
-                  "leak_add_outlined",
+                  "Clients",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
               ListTile(
                 leading: Icon(
-                  Icons.people,
+                  Icons.person_add_alt_1_sharp,
                   color: Colors.white,
                 ),
                 title: Text(
-                  "people",
+                  "Projects",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.subject_sharp,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "Patients",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.payments_rounded,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "Payments",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "users",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.code_off_sharp,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "Library",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
@@ -138,3 +178,22 @@ class Drawer_ex extends StatelessWidget {
     );
   }
 }
+
+
+
+
+//               ListTile(
+//                 leading: Icon(Icons.person),
+//                 title: Text('Users'),
+//               ),
+//               ListTile(
+//                 leading: Icon(Icons.code_off_sharp),
+//                 title: Text('Library'),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
+// }
