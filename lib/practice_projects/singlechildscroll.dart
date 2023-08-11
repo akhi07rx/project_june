@@ -28,7 +28,8 @@ class SingleScroll extends StatelessWidget {
           const Expanded(
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
-              child: Text("""
+              child: Text(
+                """
 Oppenheimer (/ˈɒpənhaɪmər/ OP-ən-hy-mər) is a 2023 epic[5] biographical thriller film[6] written and directed by Christopher Nolan. Based on the 2005 biography American Prometheus by Kai Bird and Martin J. Sherwin, the film chronicles the career of American theoretical physicist J. Robert Oppenheimer. The story predominantly focuses on Oppenheimer's early studies, his direction of the Manhattan Project during World War II, and his eventual fall from grace due to his 1954 security hearing. The film stars Cillian Murphy as Oppenheimer, Emily Blunt as his wife Kitty, Matt Damon as General Leslie Groves, head of the Manhattan Project, Robert Downey Jr. as Lewis Strauss, a senior member of the U.S. Atomic Energy Commission and Florence Pugh as Communist Party USA member Jean Tatlock. The ensemble supporting cast includes Josh Hartnett, Casey Affleck, Rami Malek, and Kenneth Branagh.
 
 The film was announced in September 2021 after Universal Pictures won a bidding war for Nolan's screenplay, following Nolan's conflict with longtime distributor Warner Bros.. Murphy was the first cast member to sign on the following month, with the rest of the cast joining between November 2021 and April 2022. Pre-production was under way by January 2022, and filming took place from February to May. Oppenheimer was filmed in a combination of IMAX 65 mm and 65 mm large-format film, including, for the first time in history, sections in IMAX black-and-white film photography. Like his previous works, Nolan used extensive practical effects and minimal computer-generated imagery. Oppenheimer is Nolan's first film to receive an R-rating since Insomnia in 2002.
@@ -128,7 +129,9 @@ Nolan began by trying to find the "thread that connected the quantum realm, the 
 Another critical moment of the film was the meeting in which President Harry S. Truman called Oppenheimer a "crybaby". Nolan wanted to convey the scene from Oppenheimer's perspective and felt it was a "massive moment of disillusion, a huge turning point [for Oppenheimer] in his approach to trying to deal with the consequences of what he'd been involved with", while also underscoring that it is a "huge shift in perception about the reality of Oppenheimer's perception".[51] He wanted to execute a quick tonal shift after the atomic bombings of Hiroshima and Nagasaki, desiring to go from the "highest triumphalism, the highest high, to the lowest low in the shortest amount of screen time possible".[63] For the ending, Nolan chose to make it intentionally vague to be open to interpretation and refrained from being didactic or conveying specific messages in his work. However, he did have the intention to have a "strong set of troubling reverberations at the end".[68]
 
 Nolan first became aware of Oppenheimer as a youth, after hearing the lyric "How can I save my little boy from Oppenheimer's deadly toy?" in the Sting song "Russians" (1985).[64] He was also inspired by his fears of nuclear holocaust throughout childhood, as he lived during the era of Campaign for Nuclear Disarmament (CND) and the anti-nuclear protests in RAF Greenham Common. He felt that "while our relationship with that [nuclear] fear has ebbed and flowed with time, the threat itself never actually went away", and felt the 2022 Russian invasion of Ukraine had caused a resurgence of nuclear anxiety.[52] Nolan had also penned a script for a biographic film on Howard Hughes approximately during the time of production of Martin Scorsese's The Aviator (2004), which had given him insight on how to write a script regarding a person's life.[51] Emily Blunt described the Oppenheimer script as "emotional" and resembling that of a thriller, while also remarking that Nolan had "Trojan-Horsed a biopic into a thriller".[69]
-"""),
+""",
+                style: GoogleFonts.ubuntu(fontSize: 10),
+              ),
             ),
           )
         ],
