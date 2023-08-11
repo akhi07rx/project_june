@@ -61,8 +61,8 @@ class StackEx extends StatelessWidget {
                   "SATORU GOJO",
                   style: GoogleFonts.aBeeZee(
                     textStyle: const TextStyle(
-                      color: Colors.red,
-                      fontSize: 10,
+                      color: Colors.white,
+                      fontSize: 15,
                     ),
                   ),
                 ),
@@ -87,21 +87,49 @@ class StackEx extends StatelessWidget {
                 ),
               ),
             ),
-            Align(
-              alignment: Alignment.topRight,
-              child: Padding(
-                padding: const EdgeInsets.only(top: 20, left: 380),
-                //const Alignment(
-                //400.280, -0.99), //const Alignment(0.10, -0.5),
-                child: Transform.scale(
-                  scale: 0.8,
-                  child: Image.asset(
-                    "assets/brands/fed.png",
-                    fit: BoxFit.contain,
-                  ),
-                ),
+            Positioned(
+              left: 440,
+              top: 25,
+              child: Container(
+                height: 30,
+                width: 30,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(.3),
+                    image: const DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage(
+                            "assets/brands/can.png"))), // color: Colors.green,
               ),
             ),
+            Positioned(
+              left: 440,
+              top: 25,
+              child: Container(
+                height: 30,
+                width: 30,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(.3),
+                    image: const DecorationImage(
+                        fit: BoxFit.fill,
+                        image: AssetImage(
+                            "assets/icons/chip.png"))), // color: Colors.green,
+              ),
+            ),
+            // Align(
+            //   alignment: Alignment.topRight,
+            //   child: Padding(
+            //     padding: const EdgeInsets.only(top: 20, left: 380),
+            //     //const Alignment(
+            //     //400.280, -0.99), //const Alignment(0.10, -0.5),
+            //     child: Transform.scale(
+            //       scale: 0.8,
+            //       child: Image.asset(
+            //         "assets/brands/fed.png",
+            //         fit: BoxFit.contain,
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
