@@ -120,7 +120,6 @@ class StackEx extends StatelessWidget {
                             "assets/icons/chip.png"))), // color: Colors.green,
               ),
             ),
-
             Positioned(
               right: 380,
               top: 90,
@@ -135,21 +134,6 @@ class StackEx extends StatelessWidget {
                             "assets/icons/nfc.png"))), // color: Colors.green,
               ),
             ),
-            // Align(
-            //   alignment: Alignment.topRight,
-            //   child: Padding(
-            //     padding: const EdgeInsets.only(top: 20, left: 380),
-            //     //const Alignment(
-            //     //400.280, -0.99), //const Alignment(0.10, -0.5),
-            //     child: Transform.scale(
-            //       scale: 0.8,
-            //       child: Image.asset(
-            //         "assets/brands/fed.png",
-            //         fit: BoxFit.contain,
-            //       ),
-            //     ),
-            //   ),
-            // ),
           ],
         ),
       ),
