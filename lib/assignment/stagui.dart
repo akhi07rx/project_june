@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:lottie/lottie.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -21,6 +22,15 @@ class Stag_Grid extends StatelessWidget {
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
           children: [
+            StaggeredGridTile.count(
+                crossAxisCellCount: 2, //width
+                mainAxisCellCount: 2, //height
+                child:
+                    Container(child: Lottie.asset("assets/animation/tweet.json")
+
+                        // color: Colors.green,
+                        // child: const Center(child: Icon(Icons.widgets)),
+                        )),
             StaggeredGridTile.count(
               crossAxisCellCount: 2, //width
               mainAxisCellCount: 4, //height
@@ -47,8 +57,8 @@ class Stag_Grid extends StatelessWidget {
               ),
             ),
             StaggeredGridTile.count(
-              crossAxisCellCount: 2, //width
-              mainAxisCellCount: 5, //height
+              crossAxisCellCount: 3, //width
+              mainAxisCellCount: 1, //height
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -59,12 +69,12 @@ class Stag_Grid extends StatelessWidget {
                     ),
                   ), // Image
                   const Text(
-                    '\nDav\n',
+                    '\nAllan Rodrigues\n',
                     style: TextStyle(
                         color: Color(0xFF000000)), // Set text color to white
                   ), // Text
                   const Text(
-                    'Windows\n',
+                    'A Group of Sea Lions\n',
                     style:
                         TextStyle(color: Colors.grey), // Set text color to grey
                   ), // Subtext
@@ -72,7 +82,7 @@ class Stag_Grid extends StatelessWidget {
               ),
             ),
             StaggeredGridTile.count(
-              crossAxisCellCount: 2, //width
+              crossAxisCellCount: 4, //width
               mainAxisCellCount: 2, //height
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -90,56 +100,6 @@ class Stag_Grid extends StatelessWidget {
                   ), // Text
                   const Text(
                     'Purple\n',
-                    style:
-                        TextStyle(color: Colors.grey), // Set text color to grey
-                  ), // Subtext
-                ],
-              ),
-            ),
-            StaggeredGridTile.count(
-              crossAxisCellCount: 2, //width
-              mainAxisCellCount: 4, //height
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Image.network(
-                      "https://images.unsplash.com/photo-1690902303020-a980f1eda16b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1915&q=80",
-                      fit: BoxFit.fitWidth, // Set image to fill tile
-                    ),
-                  ), // Image
-                  const Text(
-                    '\nRamos\n',
-                    style: TextStyle(
-                        color: Color(0xFF000000)), // Set text color to white
-                  ), // Text
-                  const Text(
-                    'The Mountain\n',
-                    style:
-                        TextStyle(color: Colors.grey), // Set text color to grey
-                  ), // Subtext
-                ],
-              ),
-            ),
-            StaggeredGridTile.count(
-              crossAxisCellCount: 2, //width
-              mainAxisCellCount: 2, //height
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Image.network(
-                      "https://images.unsplash.com/photo-1690484815724-dd8658942ed9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-                      fit: BoxFit.fitWidth, // Set image to fill tile
-                    ),
-                  ), // Image
-                  const Text(
-                    '\nhatryan\n',
-                    style: TextStyle(
-                        color: Color(0xFF000000)), // Set text color to white
-                  ), // Text
-                  const Text(
-                    'EOs\n',
                     style:
                         TextStyle(color: Colors.grey), // Set text color to grey
                   ), // Subtext
