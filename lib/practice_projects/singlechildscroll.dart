@@ -130,7 +130,7 @@ Another critical moment of the film was the meeting in which President Harry S. 
 
 Nolan first became aware of Oppenheimer as a youth, after hearing the lyric "How can I save my little boy from Oppenheimer's deadly toy?" in the Sting song "Russians" (1985).[64] He was also inspired by his fears of nuclear holocaust throughout childhood, as he lived during the era of Campaign for Nuclear Disarmament (CND) and the anti-nuclear protests in RAF Greenham Common. He felt that "while our relationship with that [nuclear] fear has ebbed and flowed with time, the threat itself never actually went away", and felt the 2022 Russian invasion of Ukraine had caused a resurgence of nuclear anxiety.[52] Nolan had also penned a script for a biographic film on Howard Hughes approximately during the time of production of Martin Scorsese's The Aviator (2004), which had given him insight on how to write a script regarding a person's life.[51] Emily Blunt described the Oppenheimer script as "emotional" and resembling that of a thriller, while also remarking that Nolan had "Trojan-Horsed a biopic into a thriller".[69]
 """,
-                style: GoogleFonts.ubuntu(fontSize: 10),
+                // style: GoogleFonts.ubuntu(fontSize: 10),
               ),
             ),
           )
