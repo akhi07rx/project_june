@@ -13,7 +13,7 @@ class StackEx extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Stack Example"),
+        title: const Text("CARD UI"),
       ),
       body: Center(
         child: Stack(
@@ -32,24 +32,6 @@ class StackEx extends StatelessWidget {
                           ))), // color: Colors.green,
             ),
             Positioned(
-              right: 150,
-              left: 20,
-              bottom: 15,
-              child: SizedBox(
-                height: 20,
-                width: 100,
-                child: Text(
-                  "SATORU GOJO",
-                  style: GoogleFonts.aBeeZee(
-                    textStyle: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
               right: 200,
               left: 20,
               top: 235,
@@ -59,10 +41,28 @@ class StackEx extends StatelessWidget {
                 width: 50,
                 child: Text(
                   "8089 8964 7890 7836",
-                  style: GoogleFonts.aBeeZee(
+                  style: GoogleFonts.quantico(
                     textStyle: const TextStyle(
                       color: Colors.white,
-                      fontSize: 20,
+                      fontSize: 18,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              right: 180,
+              left: 20,
+              bottom: 15,
+              child: SizedBox(
+                height: 20,
+                width: 100,
+                child: Text(
+                  "SATORU GOJO",
+                  style: GoogleFonts.aBeeZee(
+                    textStyle: const TextStyle(
+                      color: Colors.red,
+                      fontSize: 10,
                     ),
                   ),
                 ),
@@ -78,7 +78,7 @@ class StackEx extends StatelessWidget {
                 width: 50,
                 child: Text(
                   "LIMITLESS",
-                  style: GoogleFonts.aBeeZee(
+                  style: GoogleFonts.openSans(
                     textStyle: const TextStyle(
                       color: Colors.white,
                       fontSize: 13,
@@ -87,21 +87,20 @@ class StackEx extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              top: 20,
-              bottom: 30,
-              left: 20,
-              right: 200,
-              child: Container(
-                  height: 10,
-                  width: 10,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      image: const DecorationImage(
-                          fit: BoxFit.contain,
-                          image: NetworkImage(
-                              "https://i.imgur.com/r2sIjPM.png" // "https://64.media.tumblr.com/295275baf0fed1403338f3341b4b2ffd/7c806480f72c74de-c8/s540x810/b5299c4d3d1093fa6b23693e0882ea13bffaf0a5.png"
-                              )))),
+            Align(
+              alignment: Alignment.topRight,
+              child: Padding(
+                padding: const EdgeInsets.only(top: 20, left: 380),
+                //const Alignment(
+                //400.280, -0.99), //const Alignment(0.10, -0.5),
+                child: Transform.scale(
+                  scale: 0.8,
+                  child: Image.asset(
+                    "assets/brands/fed.png",
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
             ),
           ],
         ),
@@ -109,6 +108,3 @@ class StackEx extends StatelessWidget {
     );
   }
 }
-
-
-// chip "https://static.vecteezy.com/system/resources/previews/011/843/770/original/credit-card-chip-free-vector.jpg"
