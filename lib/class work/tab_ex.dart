@@ -10,15 +10,15 @@ class TabEx extends StatelessWidget {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
-          title: Text("Whatsapp"),
+          title: const Text("Whatsapp"),
           actions: [
-            Icon(Icons.search),
-            Icon(Icons.camera_alt),
+            const Icon(Icons.search),
+            const Icon(Icons.camera_alt),
             PopupMenuButton(itemBuilder: (context) {
-              return [PopupMenuItem(child: Text("Settings"))];
+              return [const PopupMenuItem(child: Text("Settings"))];
             })
           ],
-          bottom: TabBar(tabs: [
+          bottom: const TabBar(tabs: [
             FaIcon(FontAwesomeIcons.peopleGroup),
             Text("Chat"),
             Text("Status"),
