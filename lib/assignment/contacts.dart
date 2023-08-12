@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: contacts(),
+    home: contacts_01(),
   ));
 }
 
-class contacts extends StatelessWidget {
+class contacts_01 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

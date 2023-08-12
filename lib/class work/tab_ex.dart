@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:project_june1/listvieww/listview%20builder.dart';
-import 'package:project_june1/listvieww/listview%20custom.dart';
-import 'package:project_june1/signup%20page.dart';
-import 'package:project_june1/stateful%20login%20with%20validation.dart';
+import 'package:project_june1/assignment/contacts.dart';
+import 'package:project_june1/assignment/drawer.dart';
+import 'package:project_june1/class%20work/stack_ex.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -47,6 +46,12 @@ class TabEx extends StatelessWidget {
           ),
           body: TabBarView(
             children: [
+              StackEx(),
+              Drawer_ex(),
+              contacts_01(),
+              // StackEx(),
+              // Drawer_ex(),
+              // contacts_01(),
               // Center(
               //   child: Text("Community"),
               // ),
