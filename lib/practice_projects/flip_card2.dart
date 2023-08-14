@@ -43,7 +43,7 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(0.0),
           child: Center(
             child: SizedBox(
-              child: Image.asset('assets/brands/card_f.png'),
+              child: Image.network("https://i.imgur.com/xWnBtIE.png"),
               width: 800,
               height: 500,
             ),
@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage> {
           padding: const EdgeInsets.all(8.0),
           child: Center(
             child: SizedBox(
-              child: Image.asset('assets/brands/card_f1.png'),
+              child: Image.network("https://i.imgur.com/1uvSkGW.png"),
               width: 800,
               height: 500,
             ),
