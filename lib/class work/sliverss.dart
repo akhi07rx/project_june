@@ -15,8 +15,8 @@ class Slivers extends StatelessWidget {
         slivers: [
           SliverAppBar(
             floating: true,
-            pinned: true,
-            title: const Text("Sliver AppBar"),
+            pinned: false,
+            title: const Text('Sliver Appbar'),
             bottom: AppBar(
               elevation: 0,
               title: Container(
@@ -25,16 +25,30 @@ class Slivers extends StatelessWidget {
                 color: Colors.white,
                 child: const TextField(
                   decoration: InputDecoration(
-                      hintText: "Search Here",
+                      hintText: "Search here",
                       prefixIcon: Icon(Icons.search_rounded),
                       suffixIcon: Icon(Icons.camera_alt)),
                 ),
               ),
             ),
-          )
-          SliverList(delegate: SliverChildBuilderDelegate((context, index) => Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
-          height: 80,
-          child: ,)))
+          ),
+          SliverList(
+              delegate: SliverChildBuilderDelegate(
+                  (context, index) => Container(
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40)),
+                        child: Text('Data $index'),
+                        height: 50,
+                      ),
+                  childCount: 10)),
+          SliverGrid(
+              delegate: SliverChildBuilderDelegate((context, index) => Card(
+                    child: Center(
+                      child: Icon(Icons.ac_unit_rounded),
+                    ),
+                  )),
+              gridDelegate:
+                  SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3))
         ],
       )),
     );
