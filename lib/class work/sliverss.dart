@@ -15,7 +15,7 @@ class Slivers extends StatelessWidget {
         slivers: [
           SliverAppBar(
             floating: true,
-            pinned: false,
+            pinned: true,
             title: const Text("Sliver AppBar"),
             bottom: AppBar(
               elevation: 0,
@@ -32,6 +32,9 @@ class Slivers extends StatelessWidget {
               ),
             ),
           )
+          SliverList(delegate: SliverChildBuilderDelegate((context, index) => Container(decoration: BoxDecoration(borderRadius: BorderRadius.circular(40)),
+          height: 80,
+          child: ,)))
         ],
       )),
     );
