@@ -28,7 +28,7 @@ class CSlider extends StatelessWidget {
               decoration: const BoxDecoration(
                   image: DecorationImage(
                       fit: BoxFit.cover,
-                      image: NetworkImage("https://i.imgur.com/djzHgyI.jpg")))),
+                      image: NetworkImage("https://i.imgur.com/tKEXSab.jpg")))),
           Container(
               decoration: const BoxDecoration(
                   image: DecorationImage(
