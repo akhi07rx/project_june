@@ -15,15 +15,15 @@ class CSlider extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Colors.black),
-        title: const Center(
+        backgroundColor: Colors.transparent,
+        title: Center(
           child: Text(
             "JJK x GOJO",
-            style: GoogleFonts.aBeeZee(),
+            //style: GoogleFonts.aBeeZee(),
             // style: GoogleFonts.lato(),
-            // TextStyle(color: Colors.black),
+            style: GoogleFonts.aBeeZee(), style: TextStyle(color: Colors.black),
           ),
         ),
-        backgroundColor: Colors.transparent,
         bottomOpacity: 0.0,
         elevation: 0.0,
       ),
