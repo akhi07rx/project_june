@@ -15,15 +15,10 @@ class ProfileUi extends StatelessWidget {
       appBar: AppBar(
           backgroundColor: Color(0xFFFFFFFF),
           //elevation: 0,
-          actions: [
-            Icon(
-              Icons.camera_alt_outlined,
-              color: Colors.black,
-            ),
-            SizedBox(
-              width: 10,
-            ),
-          ]),
+          leading: Icon(
+            Icons.arrow_circle_left_sharp,
+            color: Colors.black,
+          )),
     );
   }
 }
