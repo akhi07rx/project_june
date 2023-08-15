@@ -1,5 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -12,6 +13,20 @@ class CSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        iconTheme: const IconThemeData(color: Colors.black),
+        title: const Center(
+          child: Text(
+            "JJK x GOJO",
+            style: GoogleFonts.aBeeZee(),
+            // style: GoogleFonts.lato(),
+            // TextStyle(color: Colors.black),
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        bottomOpacity: 0.0,
+        elevation: 0.0,
+      ),
       body: CarouselSlider(
         items: [
           Container(
@@ -57,7 +72,7 @@ class CSlider extends StatelessWidget {
         ],
         options: CarouselOptions(
             initialPage: 0,
-            // height: 100,
+            //height: 100,
             aspectRatio: 16 / 9,
             viewportFraction: 1,
             enableInfiniteScroll: true,
@@ -65,7 +80,7 @@ class CSlider extends StatelessWidget {
             autoPlayInterval: const Duration(seconds: 2),
             autoPlayCurve: Curves.linear,
             //enlargeCenterPage: true,
-            //enlargeFactor: .3,
+            enlargeFactor: .3,
             scrollDirection: Axis.horizontal),
       ),
     );
