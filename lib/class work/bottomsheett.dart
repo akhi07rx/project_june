@@ -25,7 +25,7 @@ class BottomSheett extends StatelessWidget {
 }
 
 void showSheet(BuildContext context) {
-  showBottomSheet(
+  showModalBottomSheet(
       context: context,
       builder: (context) {
         return Container(
