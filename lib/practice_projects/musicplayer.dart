@@ -13,16 +13,17 @@ class Musicx extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF000000),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color(0xFF000000),
+        backgroundColor: const Color(0xFF000000),
         //#000000
         title: Text(
           'Playlist',
           style: GoogleFonts.ubuntu(
             //textStyle: Theme.of(context).textTheme.headline6,
             fontSize: 30,
-            color: Color(0xFF6b7dff),
+            color: const Color(0xFF6b7dff),
             //fontWeight: FontWeight.w700,
             // fontStyle: FontStyle.italic,
           ),
