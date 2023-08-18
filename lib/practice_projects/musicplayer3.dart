@@ -3,33 +3,25 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: Musicx(),
-    debugShowCheckedModeBanner: false,
+    home: HomeS(),
   ));
 }
 
-class Musicx extends StatefulWidget {
-  const Musicx({Key? key}) : super(key: key);
-
-  @override
-  State<Musicx> createState() => _MusicxState();
-}
-
-class _MusicxState extends State<Musicx> {
+class HomeS extends StatelessWidget {
   var images = [
-    "https://www.billboard.com/wp-content/uploads/2022/06/beyonce-Lemonade-album-art-billboard-1240.jpg?w=1024",
-    "https://www.billboard.com/wp-content/uploads/media/ariana-grande-sweetner-album-art-2018-billboard-1240.jpg?w=1024",
-    "https://www.billboard.com/wp-content/uploads/2023/07/Pistol-Annies-Interstate-Gospel-2018-billboard-1240.jpg?w=1024",
-    "https://www.billboard.com/wp-content/uploads/2023/07/kate-bush-the-dreaming-cover-1982-billboard-1240.jpg?w=1024",
-    "https://www.billboard.com/wp-content/uploads/2023/07/lil-kim-hard-core-1996-billboard-1240.jpg?w=1037",
-    "https://www.billboard.com/wp-content/uploads/2023/07/fela-kuti-no-agreement-1977-billboard-1240.jpg?w=1024",
-    "https://www.billboard.com/wp-content/uploads/2023/07/roberta-flack-first-take-cover-1969-billboard-1240.jpg?w=1024",
-    "https://www.billboard.com/wp-content/uploads/2023/07/carole-king-tapestry-1971-billboard-1240.jpg?w=1240",
-    "https://www.billboard.com/wp-content/uploads/media/Lizzo-Cuz-I-Love-You-album-art-2019-billboard-1240_0.jpg?w=1024",
-    "https://www.billboard.com/wp-content/uploads/media/tyler-the-creator-igor-album-art-2019-billboard-embed.jpg?w=1024",
-    "https://www.billboard.com/wp-content/uploads/2023/07/RM-Indigo-album-art-billboard-1240.jpg?w=1024",
-    "https://www.billboard.com/wp-content/uploads/2023/07/prince-dirty-mind-1980-billboard-1240.jpg?w=1024",
-    "https://www.billboard.com/wp-content/uploads/2023/07/emmylou-harris-blue-kentucky-girl-1987-billboard-1240.jpg?w=1030",
+    "https://charts-static.billboard.com/img/2022/02/rema-000-calmdown-5vt-344x344.jpg",
+    "https://charts-static.billboard.com/img/2022/09/jordan-davis-wxd-nextthingyouknow-98j-344x344.jpg",
+    "https://charts-static.billboard.com/img/2023/08/grupofrontera-an1-elamordesuvida-d7l-344x344.jpg",
+    "https://charts-static.billboard.com/img/2023/06/bizarrap-rsm-bzrpmusicsessionsvol55-lz4-344x344.jpg",
+    "https://charts-static.billboard.com/img/2022/10/taylor-swift-824-karma-5at-344x344.jpg",
+    "https://charts-static.billboard.com/img/2023/03/toosii-h46-favoritesong-tzc-180x180.jpg",
+    "https://charts-static.billboard.com/img/2023/06/noah-kahan-k6d-dialdrunk-onl-344x344.jpg",
+    "https://charts-static.billboard.com/img/2023/04/eslabon-armado-4py-ellabailasola-2jo-344x344.jpg",
+    "https://charts-static.billboard.com/img/2023/02/luke-combs-9dm-loveyouanyway-p54-344x344.jpg",
+    "https://charts-static.billboard.com/img/2022/10/justin-moore-zy0-youmewhiskey-w8x-344x344.jpg",
+    "https://charts-static.billboard.com/img/2023/02/ynglvcas-zen-labebe-68j-344x344.jpg",
+    "https://charts-static.billboard.com/img/2023/04/davidkushner-mih-daylight-0lt-344x344.jpg",
+    "https://charts-static.billboard.com/img/2014/11/taylor-swift-824-blankspace-3be-344x344.jpg",
     "https://www.billboard.com/wp-content/uploads/2023/07/mary-j-blige-my-life-1994-billboard-1240.jpg?w=1024",
   ];
 
