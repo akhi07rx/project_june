@@ -47,30 +47,31 @@ class HomeS extends StatelessWidget {
                 ),
               ),
               bottom: PreferredSize(
-                preferredSize: Size.fromHeight(70),
+                preferredSize: const Size.fromHeight(70),
                 child: Container(
                   color: Colors.black,
-                  padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
                   child: TextField(
                     cursorColor: Colors.white10,
-                    style: TextStyle(color: Colors.white),
+                    style: const TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       hintText: "Search...",
-                      hintStyle: TextStyle(color: Colors.pinkAccent),
-                      suffixIcon: Icon(
+                      hintStyle: const TextStyle(color: Colors.pinkAccent),
+                      suffixIcon: const Icon(
                         Icons.search,
                         color: Colors.pinkAccent,
                       ),
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide(color: Colors.white10)),
+                          borderSide: const BorderSide(color: Colors.white10)),
                     ),
                   ),
                 ),
               ),
             ),
             SliverGrid(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
                 crossAxisSpacing: 15,
                 mainAxisSpacing: 15,
