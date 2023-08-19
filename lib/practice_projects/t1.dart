@@ -10,9 +10,23 @@ void main() {
 
 class MusicX extends StatelessWidget {
   var images = [
-    "https://imgur.com/WSvzowD",
-    "https://charts-static.billboard.com/img/2022/09/jordan-davis-wxd-nextthingyouknow-98j-344x344.jpg",
-    "https://charts-static.billboard.com/img/2023/08/grupofrontera-an1-elamordesuvida-d7l-344x344.jpg",
+    "https://i.imgur.com/jkfC3Xw.mp4",
+    "https://i.imgur.com/Tyn93iK.jpg",
+    "https://i.imgur.com/MpurR5l.jpg",
+    "https://i.imgur.com/aSRBBTu.jpg",
+    "https://i.imgur.com/eOAL4zU.jpg",
+    "https://i.imgur.com/AoNomEG.jpg",
+    "https://i.imgur.com/e1zb5xk.jpg",
+    "https://i.imgur.com/JyiYl9s.jpg",
+    "https://i.imgur.com/W8sKhiG.jpg",
+    "https://i.imgur.com/W8sKhiG.jpg",
+    "https://i.imgur.com/SfTzgWU.jpg",
+    "https://i.imgur.com/znJrg1f.jpg",
+    "https://i.imgur.com/Xtp6EY3.jpg",
+    "https://i.imgur.com/xyBsHdH.jpg",
+    "https://i.imgur.com/lEibvsA.jpg",
+    "https://i.imgur.com/SfbNPmx.jpg",
+    "https://i.imgur.com/7EUEeCI.jpg",
   ];
 
   @override

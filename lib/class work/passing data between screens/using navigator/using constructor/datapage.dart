@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:project_june1/class%20work/passing%20data%20between%20screens/using%20navigator/using%20constructor/to_statefulpage.dart';
 import 'package:project_june1/class%20work/passing%20data%20between%20screens/using%20navigator/using%20constructor/to_statlesspage.dart';
-
 
 void main() {
   runApp(MaterialApp(
@@ -9,6 +9,7 @@ void main() {
 }
 
 class DataPage extends StatelessWidget {
+  final String name = "Luminar";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,8 +30,18 @@ class DataPage extends StatelessWidget {
                           phone: 9947837497)));
                 },
                 child: Text('To Stateless Page')),
-                const SizedBox(height: 20,)
-            ElevatedButton(onPressed: () {}, child: Text('To Stateful Page'))
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => StatefulPage(
+                          name: name,
+                          location: "Kakkanad",
+                          phone: 9638527410)));
+                },
+                child: Text('To Stateful Page'))
           ],
         ),
       ),
