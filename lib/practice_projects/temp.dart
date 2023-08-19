@@ -1,82 +1,159 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: Musicx(),
-  ));
+void main() => runApp(const MyApp());
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
 }
 
-class Musicx extends StatelessWidget {
+class _MyAppState extends State<MyApp> {
+  bool isDark = false;
+
+  @override
+  Widget build(BuildContext context) {
+    final ThemeData themeData = ThemeData(
+        useMaterial3: true,
+        brightness: isDark ? Brightness.dark : Brightness.light);
+
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MusicX(
+        onBrightnessChange: (bool value) {
+          setState(() {
+            isDark = value;
+          });
+        },
+      ),
+      theme: themeData,
+    );
+  }
+}
+
+class MusicX extends StatelessWidget {
+  final ValueChanged<bool> onBrightnessChange;
+
+  const MusicX({Key? key, required this.onBrightnessChange}) : super(key: key);
+
+  final images = [
+    "https://i.imgur.com/Tyn93iK.jpg",
+    "https://i.imgur.com/MpurR5l.jpg",
+    "https://i.imgur.com/aSRBBTu.jpg",
+    "https://i.imgur.com/eOAL4zU.jpg",
+    "https://i.imgur.com/AoNomEG.jpg",
+    "https://i.imgur.com/e1zb5xk.jpg",
+    "https://i.imgur.com/JyiYl9s.jpg",
+    "https://i.imgur.com/W8sKhiG.jpg",
+    "https://i.imgur.com/W8sKhiG.jpg",
+    "https://i.imgur.com/SfTzgWU.jpg",
+    "https://i.imgur.com/znJrg1f.jpg",
+    "https://i.imgur.com/Xtp6EY3.jpg",
+    "https://i.imgur.com/xyBsHdH.jpg",
+    "https://i.imgur.com/lEibvsA.jpg",
+    "https://i.imgur.com/SfbNPmx.jpg",
+    "https://i.imgur.com/7EUEeCI.jpg",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF000000),
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: const Color(0xFF000000),
-        //#000000
-        title: Text(
-          'Playlist',
-          style: GoogleFonts.ubuntu(
-            //textStyle: Theme.of(context).textTheme.headline6,
-            fontSize: 30,
-            color: const Color(0xFF6b7dff),
-            //fontWeight: FontWeight.w700,
-            // fontStyle: FontStyle.italic,
-          ),
-        ),
-      ),
-      body: ListView.builder(
-        itemCount: 10,
-        itemBuilder: (context, index) {
-          return Card(
-            child: Container(
-              height: 200,
-              width: 200,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10.0),
-                child: Image.network(
-                  'https://picsum.photos/250?image=$index',
-                  fit: BoxFit.cover,
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              backgroundColor: Colors.black,
+              floating: true,
+              pinned: true,
+              elevation: 0,
+              centerTitle: true,
+              title: Text(
+                "Playlist",
+                style: GoogleFonts.satisfy(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueAccent,
+                ),
+              ),
+              bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(70),
+                child: Container(
+                  color: Colors.black,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                  child: SearchAnchor(
+                    builder:
+                        (BuildContext context, SearchController controller) {
+                      return SearchBar(
+                        controller: controller,
+                        padding: const MaterialStatePropertyAll<EdgeInsets>(
+                            EdgeInsets.symmetric(horizontal: 16.0)),
+                        onTap: () {
+                          controller.openView();
+                        },
+                        onChanged: (_) {
+                          controller.openView();
+                        },
+                        leading: const Icon(Icons.search),
+                        trailing: <Widget>[
+                          Tooltip(
+                            message: 'Change brightness mode',
+                            child: IconButton(
+                              onPressed: () {
+                                onBrightnessChange(
+                                    !Theme.of(context).brightness.isDark);
+                              },
+                              icon: const Icon(Icons.wb_sunny_outlined),
+                              selectedIcon:
+                                  const Icon(Icons.brightness_2_outlined),
+                            ),
+                          )
+                        ],
+                      );
+                    },
+                    suggestionsBuilder:
+                        (BuildContext context, SearchController controller) {
+                      return List<ListTile>.generate(5, (int index) {
+                        final String item = 'item $index';
+                        return ListTile(
+                          title: Text(item),
+                          onTap: () {
+                            controller.closeView(item);
+                          },
+                        );
+                      });
+                    },
+                  ),
                 ),
               ),
             ),
-          );
-        },
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: Offset(0, 3),
+            SliverGrid(
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 15,
+                mainAxisSpacing: 15,
+              ),
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        image: DecorationImage(
+                          image: NetworkImage(images[index]),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                  );
+                },
+                childCount: images.length,
+              ),
             ),
-          ],
-        ),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Container(
-              child: Image.network('https://picsum.photos/250?image=11',
-                  height: 24, width: 24),
-              padding: const EdgeInsets.all(12),
-            ),
-            Container(
-              decoration: const BoxDecoration(
-                  color: Colors.blueAccent,
-                  borderRadius: BorderRadius.only(
-                      bottomRight: Radius.circular(12),
-                      bottomLeft: Radius.circular(12))),
-              child: Text("Student"),
-              padding: const EdgeInsets.all(12),
-            )
           ],
         ),
       ),

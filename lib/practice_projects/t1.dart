@@ -10,7 +10,6 @@ void main() {
 
 class MusicX extends StatelessWidget {
   var images = [
-    "https://i.imgur.com/jkfC3Xw.mp4",
     "https://i.imgur.com/Tyn93iK.jpg",
     "https://i.imgur.com/MpurR5l.jpg",
     "https://i.imgur.com/aSRBBTu.jpg",
