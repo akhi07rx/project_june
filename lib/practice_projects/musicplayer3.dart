@@ -3,13 +3,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: HomeS(),
   ));
 }
 
 class HomeS extends StatelessWidget {
   var images = [
-    "https://charts-static.billboard.com/img/2022/02/rema-000-calmdown-5vt-344x344.jpg",
+    "https://imgur.com/WSvzowD",
     "https://charts-static.billboard.com/img/2022/09/jordan-davis-wxd-nextthingyouknow-98j-344x344.jpg",
     "https://charts-static.billboard.com/img/2023/08/grupofrontera-an1-elamordesuvida-d7l-344x344.jpg",
     "https://charts-static.billboard.com/img/2023/06/bizarrap-rsm-bzrpmusicsessionsvol55-lz4-344x344.jpg",
