@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:project_june1/practice_projects/contacts%20x/ct_temp.dart';
+import 'package:project_june1/practice_projects/contacts%20x/ct_temp/ct_temp.dart';
 import 'package:rive/rive.dart';
 
 class SplashEx extends StatefulWidget {

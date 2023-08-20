@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:project_june1/practice_projects/contacts%20x/ct_temp.dart';
+import 'package:project_june1/practice_projects/contacts%20x/ct_temp/ct_temp.dart';
 
 class SplashS extends StatefulWidget {
   const SplashS({Key? key}) : super(key: key);
