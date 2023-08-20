@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:project_june1/class%20work/passing%20data%20between%20screens/dummydata.dart';
+//import 'package:project_june1/class%20work/passing%20data%20between%20screens/dummydata.dart';
+import 'package:project_june1/class%20work/passing%20data%20between%20screens/using%20navigator/dummydata.dart';
 //import 'package:project_june1/passing%20data%20between%20screens/dummy%20data.dart';
 
 class ProductDetails extends StatelessWidget {
