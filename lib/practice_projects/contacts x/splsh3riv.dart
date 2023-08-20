@@ -28,12 +28,11 @@ class _SplashSState extends State<SplashEx> {
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Expanded(
-        //child: RiveAnimation.network(
-        //"https://public.rive.app/community/runtime-files/2323-4608-wolvie-v2.riv",
-        //"https://public.rive.app/community/runtime-files/5492-10843-geometry-madness.riv",
-        child: RiveAnimation.asset(
-          "assets/animation/cat.riv",
-          fit: BoxFit.contain,
+        child: RiveAnimation.network(
+          "https://public.rive.app/community/runtime-files/5492-10843-geometry-madness.riv",
+          // child: RiveAnimation.asset(
+          //   "assets/animation/cat.riv",
+          fit: BoxFit.fill,
         ),
       ),
     ])));
