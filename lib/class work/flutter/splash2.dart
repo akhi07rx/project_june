@@ -8,20 +8,20 @@ class Splash2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         ///  set background color way 1
         //  backgroundColor: Colors.grey,
         body: Container(
-          ///  set background color way 2 using gradient inside container
-        decoration: const BoxDecoration(
+      ///  set background color way 2 using gradient inside container
+      decoration: const BoxDecoration(
           // gradient: LinearGradient(
           //     begin: Alignment.bottomLeft,
           //     end: Alignment.topRight,
           //     colors: [Colors.purple, Colors.white70, Colors.purpleAccent])
           ///  set background color way 3 using Image
           image: DecorationImage(
-             fit: BoxFit.cover,
-              image: AssetImage("assets/images/backimage.png"))
-        ),
+              fit: BoxFit.cover,
+              image: AssetImage("assets/images/backimage.png"))),
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
