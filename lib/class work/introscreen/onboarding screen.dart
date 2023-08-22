@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-//import 'package:project_june1/class%20work/flutter/splash2.dart';
-import 'package:project_june1/class%20work/flutter/splash3.dart';
-import 'package:project_june1/class%20work/flutter/stateful%20login%20with%20validation.dart';
+import 'package:project_june1/class%20work/flutter/login.dart';
+import 'package:project_june1/class%20work/flutter/splashtemp.dart';
+// import 'package:project_june1/class%20work/flutter/stateful%20login%20with%20validation.dart';
+// import 'package:project_june1/practice_projects/contacts%20x/ct_temp/splsh3riv.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -11,39 +13,55 @@ void main() {
 }
 
 class IntroScreen extends StatelessWidget {
-  const IntroScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
+    PageDecoration pageDecoration = PageDecoration(
+        titleTextStyle: const TextStyle(
+            fontWeight: FontWeight.w900, fontSize: 40, color: Colors.purple),
+        bodyTextStyle: GoogleFonts.aBeeZee(
+            fontStyle: FontStyle.italic,
+            fontSize: 20,
+            color: Colors.pinkAccent),
+        boxDecoration: const BoxDecoration(
+            gradient: LinearGradient(colors: [
+          Colors.black,
+          Colors.grey,
+          Colors.white38,
+          Colors.white
+        ], begin: Alignment.bottomRight, end: Alignment.topLeft)));
     return IntroductionScreen(
       pages: [
         PageViewModel(
+            decoration: pageDecoration,
             title: 'First Page',
             body:
-                'Introduction screen shows the details of the app and demo of the pages',
+                "Introduction screen shows the details of the app and demo of pages",
             image: IntroImage(
-                "https://images.unsplash.com/photo-1673235966910-f2a443bdbaaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=464&q=80")),
+                "https://images.unsplash.com/photo-1663870244786-19cf8fe3ba40?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1032&q=80")),
         PageViewModel(
-            title: 'First Page',
+            decoration: pageDecoration,
+            title: 'Second Page',
             body:
-                'Introduction screen shows the details of the app and demo of the pages',
+                "Introduction screen shows the details of the app and demo of pages",
             image: IntroImage(
-                "https://images.unsplash.com/photo-1531525645387-7f14be1bdbbd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80")),
+                "https://plus.unsplash.com/premium_photo-1692193552327-3458ef3817c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDd8eGpQUjRobGtCR0F8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=60")),
         PageViewModel(
-            title: 'First Page',
+            decoration: pageDecoration,
+            title: 'Third Page',
             body:
-                'Introduction screen shows the details of the app and demo of the pages',
+                "Introduction screen shows the details of the app and demo of pages",
             image: IntroImage(
-                "https://images.unsplash.com/photo-1531525727990-67532cd332c6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=580&q=80")),
+                "https://images.unsplash.com/photo-1691357045157-8ff460d12231?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMwfHhqUFI0aGxrQkdBfHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=1000&q=60"))
       ],
       onDone: () => Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => Splash3())),
+          .push(MaterialPageRoute(builder: (context) => Splashtemp())),
       onSkip: () => Navigator.of(context)
-          .push(MaterialPageRoute(builder: (context) => Login2())),
-      skip: Text('Skip'),
-      next: Icon(Icons.arrow_forward_ios_rounded),
-      done: Text("Done"),
-      dotsDecorator: DotsDecorator(
+          .push(MaterialPageRoute(builder: (context) => LoginPage())),
+      showSkipButton: true,
+      skip: const Text('Skip'),
+      next: const Icon(Icons.arrow_forward_rounded),
+      done: const Text("Done"),
+      dotsDecorator: const DotsDecorator(
           size: Size(10, 12),
           color: Colors.grey,
           activeSize: Size(25, 12),
@@ -54,9 +72,12 @@ class IntroScreen extends StatelessWidget {
   }
 
   Widget IntroImage(String image) {
-    return Align(
-      alignment: Alignment.center,
-      child: Image.network(image),
-    );
+    return Container(
+        height: 500,
+        width: double.infinity,
+        decoration: BoxDecoration(
+            image: DecorationImage(
+          image: NetworkImage(image),
+        )));
   }
 }
