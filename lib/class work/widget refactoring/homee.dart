@@ -39,7 +39,23 @@ class MyWidget extends StatelessWidget {
             height: 100,
           ),
           const Text("Pizza"),
-          ElevatedButton(onPressed: () {}, child: const Text('Buy Now')),
+          const Text('\$ 100'),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.favorite),
+                  label: const Text('Wishlist')),
+              const SizedBox(
+                width: 20,
+              ),
+              ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.shopping_cart),
+                  label: const Text('Buy Now')),
+            ],
+          ),
         ],
       ),
     );
