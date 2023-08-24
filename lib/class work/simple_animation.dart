@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+void main() {
+  runApp(MaterialApp(
+    home: SimpleAnimation(),
+  ));
+}
+
 class SimpleAnimation extends StatefulWidget {
   const SimpleAnimation({super.key});
 
