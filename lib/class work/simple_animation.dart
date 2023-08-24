@@ -13,7 +13,17 @@ class _SimpleAnimationState extends State<SimpleAnimation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListView(),
+      body: ListView(
+        children: [
+          Container(
+            margin: EdgeInsets.all(20),
+            child: Text(
+              "Hello World",
+              style: TextStyle(fontSize: animation?.value),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
