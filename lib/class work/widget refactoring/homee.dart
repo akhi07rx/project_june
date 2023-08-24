@@ -11,51 +11,51 @@ class RefraHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Gridview using Refractoring'),
+        title: const Text("GridView Using Refactoring"),
       ),
       body: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2),
           itemBuilder: (context, index) {
-            return const MyWidget();
+            return NewWidget();
           }),
     );
   }
 }
 
-class MyWidget extends StatelessWidget {
-  const MyWidget({
-    super.key,
+class NewWidget extends StatelessWidget {
+  const NewWidget({
+    super.key, required AssetImage myimage, required String name, required String price,
   });
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Image.asset(
             "assets/images/pizza.png",
             height: 100,
           ),
-          const Text("Pizza"),
-          const Text('\$ 100'),
+          const Text("Donut"),
+          const Text("\$ 100"),
           Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               ElevatedButton.icon(
                   onPressed: () {},
                   icon: const Icon(Icons.favorite),
-                  label: const Text('Wishlist')),
+                  label: Text('WishList')),
               const SizedBox(
-                width: 20,
+                width: 10,
               ),
               ElevatedButton.icon(
                   onPressed: () {},
                   icon: const Icon(Icons.shopping_cart),
                   label: const Text('Buy Now')),
             ],
-          ),
+          )
         ],
       ),
     );
