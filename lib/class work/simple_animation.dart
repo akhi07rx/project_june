@@ -16,12 +16,14 @@ class _SimpleAnimationState extends State<SimpleAnimation> {
       body: ListView(
         children: [
           Container(
-            margin: EdgeInsets.all(20),
+            margin: const EdgeInsets.all(20),
             child: Text(
               "Hello World",
               style: TextStyle(fontSize: animation?.value),
             ),
-          )
+          ),
+          ElevatedButton(
+              onPressed: () => zoomIn, child: const Text('Increase Text Size'))
         ],
       ),
     );
