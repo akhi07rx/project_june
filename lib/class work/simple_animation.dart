@@ -4,15 +4,21 @@ class SimpleAnimation extends StatefulWidget {
   const SimpleAnimation({super.key});
 
   @override
-  void initState(){
-    AnimationController=AnimationController(vsync: vsync)
-  }
   State<SimpleAnimation> createState() => _SimpleAnimationState();
 }
 
 class _SimpleAnimationState extends State<SimpleAnimation> {
   Animation<double>? animation;
   AnimationController? animationController;
+
+
+  @override
+  void initState(){
+    AnimationController=AnimationController(vsync: vsync)
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
