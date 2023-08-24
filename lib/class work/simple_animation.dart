@@ -7,17 +7,22 @@ class SimpleAnimation extends StatefulWidget {
   State<SimpleAnimation> createState() => _SimpleAnimationState();
 }
 
-class _SimpleAnimationState extends State<SimpleAnimation> {
+class _SimpleAnimationState extends State<SimpleAnimation>
+    with SingleTickerProviderStateMixin {
   Animation<double>? animation;
   AnimationController? animationController;
 
-
   @override
-  void initState(){
-    AnimationController=AnimationController(vsync: vsync)
+  void initState() {
+    animationController =
+        AnimationController(vsync: this, duration: Duration(seconds: 3));
+    animation =
+        Tween<double>(begin: 12.0, end: 100.0).animate(animationController!)
+          ..addListener(() {
+            setState(() {});
+          });
     super.initState();
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -25,20 +30,21 @@ class _SimpleAnimationState extends State<SimpleAnimation> {
       body: ListView(
         children: [
           Container(
-            margin: const EdgeInsets.all(20),
+            margin: EdgeInsets.all(20),
             child: Text(
-              "Hello World",
+              'Hello All',
               style: TextStyle(fontSize: animation?.value),
             ),
           ),
           ElevatedButton(
-              onPressed: () => zoomIn, child: const Text('Increase Text Size'))
+              onPressed: () => ZoomIn(),
+              child: const Text('Increase text size'))
         ],
       ),
     );
   }
-}
 
-void zoomIn() {
-  AnimationController!.forward();
+  void ZoomIn() {
+    animationController!.forward();
+  }
 }
