@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:project_june1/assignment/contacts.dart';
+import 'package:project_june1/assignment/contacts/contacts.dart';
 
 void main() {
   runApp(MaterialApp(

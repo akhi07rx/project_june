@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:project_june1/assignment/contacts.dart';
+import 'package:project_june1/assignment/contacts/contacts.dart';
 import 'package:project_june1/assignment/drawer.dart';
 import 'package:project_june1/class%20work/stack_ex.dart';
 
