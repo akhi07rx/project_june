@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class BigScreen extends StatelessWidget {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,9 +20,9 @@ class BigScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: AspectRatio(
-                      aspectRatio: 16/9,
+                      aspectRatio: 16 / 9,
                       child: Container(
-                      //  height: 80,
+                        //  height: 80,
                         color: Colors.deepPurple[400],
                       ),
                     ),
