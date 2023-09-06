@@ -20,7 +20,7 @@ class BigScreen extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: AspectRatio(
-                      aspectRatio: 16 / 9,
+                      aspectRatio: 16 / 4,
                       child: Container(
                         //  height: 80,
                         color: Colors.deepPurple[400],
@@ -48,13 +48,13 @@ class BigScreen extends StatelessWidget {
             ),
 
             // second column
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Container(
-            //     width: 200,
-            //     color: Colors.deepPurple[300],
-            //   ),
-            // )
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: 200,
+                color: Colors.deepPurple[300],
+              ),
+            )
           ],
         ),
       ),
