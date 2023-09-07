@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:project_june1/class%20work/storage%20in%20flutter/simpl_login%20using%20pref/shared_home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+void main() {runApp(MaterialApp(home: ,))}
+
 class LoginShared extends StatefulWidget {
   const LoginShared({super.key});
 
