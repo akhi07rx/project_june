@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginShared extends StatefulWidget {
   const LoginShared({super.key});
@@ -10,6 +11,7 @@ class LoginShared extends StatefulWidget {
 class _LoginSharedState extends State<LoginShared> {
   final email = TextEditingController();
   final pwd = TextEditingController();
+  late SharedPreferences preferences;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,13 @@ class _LoginSharedState extends State<LoginShared> {
               controller: pwd,
             ),
           ),
-          ElevatedButton(onPressed: () {}, child: const Text("LOGIN"))
+          ElevatedButton(
+              onPressed: () async {
+                preferences = await SharedPreferences.getInstance();
+                String username = email.text;
+                String pass = pwd.text;
+              },
+              child: const Text("LOGIN"))
         ]),
       ),
     );
