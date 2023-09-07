@@ -10,6 +10,13 @@ class LoginShared extends StatefulWidget {
 class _LoginSharedState extends State<LoginShared> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("LOGIN PAGE"),
+      ),
+      body: Center(
+        child: Column(children: [TextField()]),
+      ),
+    );
   }
 }
