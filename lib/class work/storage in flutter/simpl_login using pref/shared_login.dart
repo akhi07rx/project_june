@@ -8,6 +8,9 @@ class LoginShared extends StatefulWidget {
 }
 
 class _LoginSharedState extends State<LoginShared> {
+  final email = TextEditingController();
+  final pwd = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,7 +18,11 @@ class _LoginSharedState extends State<LoginShared> {
         title: Text("LOGIN PAGE"),
       ),
       body: Center(
-        child: Column(children: [TextField()]),
+        child: Column(children: [
+          TextField(),
+          TextField(),
+          ElevatedButton(onPressed: onPressed, child: Text("LOGIN"))
+        ]),
       ),
     );
   }
