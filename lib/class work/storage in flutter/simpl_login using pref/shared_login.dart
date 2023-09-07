@@ -47,10 +47,8 @@ class _LoginSharedState extends State<LoginShared> {
                   preferences.setString('uname', username);
                   preferences.setString('pword', password);
 
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                              builder: (context) => SharedHome())));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => SharedHome()));
                 }
                 email.text = "";
                 pwd.text = "";
