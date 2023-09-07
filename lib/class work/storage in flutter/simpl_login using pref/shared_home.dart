@@ -1,6 +1,5 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
+import 'package:project_june1/class%20work/storage%20in%20flutter/simpl_login%20using%20pref/shared_login.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedHome extends StatefulWidget {
@@ -15,21 +14,39 @@ class _SharedHomeState extends State<SharedHome> {
   late String username;
 
   @override
-  Void initState() {
-    fetchData(); // When the second page loads this method will execute
+  void initState() {
+    fetchData(); // when the second page loads this method will execute
     super.initState();
   }
 
-
-  void fetchData() async{
+  void fetchData() async {
     preferences = await SharedPreferences.getInstance();
     setState(() {
-      username = preferences.getString('uname')!; // fetch the value from shared preference
+      username = preferences
+          .getString('uname')!; // fetch the value from shared preferences
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
-  };
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            Text("WELCOME $username"),
+            const SizedBox(
+              height: 10,
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  preferences.setBool('newuser', true);
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => LoginShared()));
+                },
+                child: Text('LOGOUT'))
+          ],
+        ),
+      ),
+    );
+  }
 }
