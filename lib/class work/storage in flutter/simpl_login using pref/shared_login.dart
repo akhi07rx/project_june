@@ -15,13 +15,27 @@ class _LoginSharedState extends State<LoginShared> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("LOGIN PAGE"),
+        title: const Text("LOGIN PAGE"),
       ),
       body: Center(
         child: Column(children: [
-          TextField(),
-          TextField(),
-          ElevatedButton(onPressed: onPressed, child: Text("LOGIN"))
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: TextField(
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), hintText: 'Email'),
+              controller: email,
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: TextField(
+              decoration: const InputDecoration(
+                  border: OutlineInputBorder(), hintText: 'Password'),
+              controller: pwd,
+            ),
+          ),
+          ElevatedButton(onPressed: () {}, child: const Text("LOGIN"))
         ]),
       ),
     );
