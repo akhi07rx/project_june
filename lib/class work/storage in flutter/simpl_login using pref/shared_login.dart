@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_june1/class%20work/storage%20in%20flutter/simpl_login%20using%20pref/shared_home.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginShared extends StatefulWidget {
@@ -41,7 +42,18 @@ class _LoginSharedState extends State<LoginShared> {
               onPressed: () async {
                 preferences = await SharedPreferences.getInstance();
                 String username = email.text;
-                String pass = pwd.text;
+                String password = pwd.text;
+                if (username != "" && password != "") {
+                  preferences.setString('uname', username);
+                  preferences.setString('pword', password);
+
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                              builder: (context) => SharedHome())));
+                }
+                email.text = "";
+                pwd.text = "";
               },
               child: const Text("LOGIN"))
         ]),
