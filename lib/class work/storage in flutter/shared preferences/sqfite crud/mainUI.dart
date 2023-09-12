@@ -20,7 +20,7 @@ class _SqfliteHomeState extends State<SqfliteHome> {
 
   @override
   void initState() {
-    loadUI();
+    loadUi();
     super.initState();
   }
 
@@ -38,7 +38,22 @@ class _SqfliteHomeState extends State<SqfliteHome> {
                 return Card(
                   child: ListTile(
                     title: Text(contacts[index]['cname']),
+                    // accessing single map from a list
                     subtitle: Text(contacts[index]['cnumber']),
+                    trailing: Wrap(
+                      children: [
+                        IconButton(
+                            onPressed: () {
+                              showSheet(contacts[index]['id']);
+                            },
+                            icon: Icon(Icons.edit)),
+                        IconButton(
+                            onPressed: () {
+                              deleteContact(contacts[index]['id']);
+                            },
+                            icon: Icon(Icons.delete))
+                      ],
+                    ),
                   ),
                 );
               }),
@@ -50,11 +65,16 @@ class _SqfliteHomeState extends State<SqfliteHome> {
     );
   }
 
-
   final name_cntrl = TextEditingController();
   final phone_cntrl = TextEditingController();
 
   void showSheet(int? id) async {
+    if (id != null) {
+      final existingcontact =
+          contacts.firstWhere((element) => element['id'] == id);
+      name_cntrl.text = existingcontact['cname'];
+      phone_cntrl.text = existingcontact['cnumber'];
+    }
     showModalBottomSheet(
         context: context,
         isScrollControlled: true,
@@ -90,12 +110,11 @@ class _SqfliteHomeState extends State<SqfliteHome> {
                         await createContact();
                       }
                       if (id != null) {
-                        // await updateContact(id);
+                        await updateContact(id);
                       }
-                      name_cntrl.text="";
-                      phone_cntrl.text="";
+                      name_cntrl.text = "";
+                      phone_cntrl.text = "";
                       Navigator.pop(context);
-
                     },
                     child:
                         Text(id == null ? "Create Contact" : "Update Contact"))
@@ -107,15 +126,28 @@ class _SqfliteHomeState extends State<SqfliteHome> {
 
 //to add a new data or contact to sqflite db
   Future<void> createContact() async {
-    var id = await SQLHelper.create_contact(name_cntrl.text, phone_cntrl.text);
-    print(id);
+    await SQLHelper.create_contact(name_cntrl.text, phone_cntrl.text);
+    loadUi(); // refresh list each time
   }
 
-  void loadUI() async {
+  void loadUi() async {
     final data = await SQLHelper.readContacts();
     setState(() {
-      contacts = data;
+      contacts =
+          data; // we are performing crud in this list so it must be inside setstate
       isLoading = false;
     });
+  }
+
+  Future<void> updateContact(int id) async {
+    await SQLHelper.updateContact(id, name_cntrl.text, phone_cntrl.text);
+    loadUi();
+  }
+
+  Future<void> deleteContact(int id) async {
+    await SQLHelper.deleteContact(id);
+    loadUi();
+    ScaffoldMessenger.of(context)
+        .showSnackBar(SnackBar(content: Text("Succesfully Deleted")));
   }
 }
