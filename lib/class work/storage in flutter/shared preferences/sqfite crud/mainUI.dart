@@ -53,7 +53,6 @@ class _SqfliteHomeState extends State<SqfliteHome> {
 
 
 
-
   final name_cntrl = TextEditingController();
   final phone_cntrl = TextEditingController();
 
