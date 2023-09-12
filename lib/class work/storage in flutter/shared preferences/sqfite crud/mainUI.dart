@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_june1/class%20work/storage%20in%20flutter/shared%20preferences/sqfite%20crud/sqfiteoperations.dart';
 
 class SqfliteHome extends StatefulWidget {
   const SqfliteHome({super.key});
@@ -12,6 +13,12 @@ class _SqfliteHomeState extends State<SqfliteHome> {
 
   // to read all the values from sqflite db
   List<Map<String, dynamic>> contacts = [];
+
+  @override
+  void initState() {
+    loadUI();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,4 +97,13 @@ class _SqfliteHomeState extends State<SqfliteHome> {
   Future<void> CreateContacts() async {
     await SQLHelper.create_contact(name_cntl.text, phn_cntl.text);
   }
+}
+
+void loadUI() async {
+  final data = await SQLHelper.readContacts();
+  setState(() {
+    contacts = data;
+    isLoading = false;
+  });
+}
 }
