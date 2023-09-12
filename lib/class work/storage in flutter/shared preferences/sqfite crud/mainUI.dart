@@ -38,6 +38,7 @@ class _SqfliteHomeState extends State<SqfliteHome> {
                 return Card(
                   child: ListTile(
                     title: Text(contacts[index]['cname']),
+                    subtitle: Text(contacts[index]['cnumber']),
                   ),
                 );
               }),
