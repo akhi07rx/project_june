@@ -36,7 +36,9 @@ class _SqfliteHomeState extends State<SqfliteHome> {
               itemCount: contacts.length,
               itemBuilder: (context, index) {
                 return Card(
-                  child: ListTile(),
+                  child: ListTile(
+                    title: Text(contacts[index]['cname']),
+                  ),
                 );
               }),
       floatingActionButton: FloatingActionButton(
