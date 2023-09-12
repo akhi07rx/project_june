@@ -28,8 +28,8 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 android {
     namespace "com.example.project_june"
     compileSdkVersion flutter.compileSdkVersion
-    ndkVersion flutter.ndkVersion
     ndkVersion "25.1.8937393"
+
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -47,6 +47,7 @@ android {
         targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
+        multiDexEnabled true
     }
 
     buildTypes {
@@ -56,6 +57,11 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+}
+
+dependencies {
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.android.material:material:1.9.0'
 }
 
 flutter {
