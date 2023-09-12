@@ -1,40 +1,29 @@
-import 'package:flutter/material.dart';
-import 'package:project_june1/class%20work/flutter/bottomsheett.dart';
+import 'package:sqflite/sqflite.dart' as sql;
 
-class SqfliteHome extends StatefulWidget {
-  const SqfliteHome({super.key});
+class SQLHelper {
+  //database creation
+  static Future<sql.Database> createDB() async {
+    return sql.openDatabase('mycontacts.db', version: 1,
+        onCreate: (sql.Database database, int version) async {
+      await createTable(database);
+    });
+  }
 
-  @override
-  State<SqfliteHome> createState() => _SqfliteHomeState();
-}
+  //table for storing values in this db
+  static Future<void> createTable(sql.Database database) async {
+    await database.execute("""CREATE TABLE contacts(
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    cname TEXT,
+    cnumber TEXT,
+    )""");
+  }
 
-class _SqfliteHomeState extends State<SqfliteHome> {
-  var isLoading = true;
-
-  // to read all the values from sqflite db
-  List<Map<String, dynamic>> contacts = [];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('My Contacts'),
-      ),
-      body: isLoading
-          ? Center(
-              child: CircularProgressIndicator(),
-            )
-          : ListView.builder(
-              itemCount: contacts.length,
-              itemBuilder: (context, index) {
-                return Card(
-                  child: ListTile(),
-                );
-              }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () =>showSheet(null) {},
-        child: const Icon(Icons.add),
-      ),
-    );
+  // save name and phone number to contacts table
+  static Future<int> create_contact(String name, String phonenum) async {
+    final db = await SQLHelper.createDB(); // open database
+    final data = {'cname': name, 'cnumber': phonenum};
+    //         insert to a particular table with values as map
+    final id = await db.insert('contacts', data);
+    return id;
   }
 }
