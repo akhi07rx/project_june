@@ -92,6 +92,10 @@ class _SqfliteHomeState extends State<SqfliteHome> {
                       if (id != null) {
                         // await updateContact(id);
                       }
+                      name_cntrl.text="";
+                      phone_cntrl.text="";
+                      Navigator.pop(context);
+
                     },
                     child:
                         Text(id == null ? "Create Contact" : "Update Contact"))
