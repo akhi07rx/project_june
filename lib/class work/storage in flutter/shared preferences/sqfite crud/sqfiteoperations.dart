@@ -9,9 +9,6 @@ class SQLHelper {
     });
   }
 
-
-
-
   //table for storing values in this db
   static Future<void> createTable(sql.Database database) async {
     await database.execute("""CREATE TABLE contacts(
