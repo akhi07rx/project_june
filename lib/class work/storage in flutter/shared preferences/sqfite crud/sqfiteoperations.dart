@@ -26,4 +26,11 @@ class SQLHelper {
     final id = await db.insert('contacts', data);
     return id;
   }
+
+  //fetch or read all the contacts from db
+  static Future<List<Map<String, dynamic>>> readContacts() async {
+    final db = await SQLHelper.createDB();
+    //read all the values from db
+    return db.query('contacts', orderBy: 'id');
+  }
 }

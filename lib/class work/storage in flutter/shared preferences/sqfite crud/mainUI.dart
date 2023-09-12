@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:project_june1/class%20work/storage%20in%20flutter/shared%20preferences/sqfite%20crud/sqfiteoperations.dart';
 
-class SqfliteHome extends StatefulWidget {
-  const SqfliteHome({super.key});
+void main() {
+  runApp(MaterialApp(
+    home: SqfliteHome(),
+  ));
+}
 
+class SqfliteHome extends StatefulWidget {
   @override
   State<SqfliteHome> createState() => _SqfliteHomeState();
 }
@@ -11,7 +15,7 @@ class SqfliteHome extends StatefulWidget {
 class _SqfliteHomeState extends State<SqfliteHome> {
   var isLoading = true;
 
-  // to read all the values from sqflite db
+  //to read all the values from sqflite db
   List<Map<String, dynamic>> contacts = [];
 
   @override
@@ -24,12 +28,10 @@ class _SqfliteHomeState extends State<SqfliteHome> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Contacts'),
+        title: const Text("MyContacts"),
       ),
       body: isLoading
-          ? const Center(
-              child: CircularProgressIndicator(),
-            )
+          ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
               itemCount: contacts.length,
               itemBuilder: (context, index) {
@@ -39,18 +41,19 @@ class _SqfliteHomeState extends State<SqfliteHome> {
               }),
       floatingActionButton: FloatingActionButton(
         // creating a new data so the id will be null
-        onPressed: () => showsheet(null),
+        onPressed: () => showSheet(null),
         child: const Icon(Icons.add),
       ),
     );
   }
 
-  final name_cntl = TextEditingController();
-  final phn_cntl = TextEditingController();
+  final name_cntrl = TextEditingController();
+  final phone_cntrl = TextEditingController();
 
-  void showsheet(int? id) async {
+  void showSheet(int? id) async {
     showModalBottomSheet(
         context: context,
+        isScrollControlled: true,
         builder: (context) {
           return Container(
             padding: EdgeInsets.only(
@@ -59,51 +62,52 @@ class _SqfliteHomeState extends State<SqfliteHome> {
                 top: 15,
                 bottom: MediaQuery.of(context).viewInsets.bottom + 120),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 TextField(
-                  controller: name_cntl,
+                  controller: name_cntrl,
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(), hintText: "Name"),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 TextField(
-                  controller: phn_cntl,
+                  controller: phone_cntrl,
                   decoration: const InputDecoration(
                       border: OutlineInputBorder(), hintText: "Phone Number"),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 ElevatedButton(
                     onPressed: () async {
                       if (id == null) {
-                        await CreateContacts();
+                        await createContact();
                       }
                       if (id != null) {
-                        //await UpdateContacts();
+                        // await updateContact(id);
                       }
                     },
                     child:
-                        Text(id == null ? "Create Contact" : "Update contact"))
+                        Text(id == null ? "Create Contact" : "Update Contact"))
               ],
             ),
           );
         });
   }
 
-//to add new data or contacts to sqflite db
-  Future<void> CreateContacts() async {
-    await SQLHelper.create_contact(name_cntl.text, phn_cntl.text);
+//to add a new data or contact to sqflite db
+  Future<void> createContact() async {
+    var id = await SQLHelper.create_contact(name_cntrl.text, phone_cntrl.text);
+    print(id);
   }
-}
 
-void loadUI() async {
-  final data = await SQLHelper.readContacts();
-  setState(() {
-    contacts = data;
-    isLoading = false;
-  });
-}
+  void loadUI() async {
+    final data = await SQLHelper.readContacts();
+    setState(() {
+      contacts = data;
+      isLoading = false;
+    });
+  }
 }
