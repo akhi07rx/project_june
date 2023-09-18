@@ -25,10 +25,10 @@ class SQLHelper {
     return id;
   }
 
-  static Future<List<Map<String, Object?>>>logincheck(String email, String password) async {
+  static Future<List<Map>>logincheck(String email, String password) async {
     final db= await SQLHelper.CreateDb();
-    final data=db.rawQuery("SELECT * FROM user WHERE email= '$email' AND password ='$password' ");
-    print(data.toString());
+    final data=await db.rawQuery("SELECT * FROM user WHERE email= '$email' AND password ='$password' ");
+    // print(data.toString());
     if(data.isNotEmpty)
       {
         return data;

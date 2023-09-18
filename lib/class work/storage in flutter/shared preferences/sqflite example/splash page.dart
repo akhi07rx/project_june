@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project_june1/class%20work/storage%20in%20flutter/shared%20preferences/sqflite%20example/LoginUi.dart';
 import 'package:project_june1/class%20work/storage%20in%20flutter/shared%20preferences/sqflite%20example/Registrationui.dart';
 
 

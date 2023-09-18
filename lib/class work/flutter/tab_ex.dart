@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:project_june1/assignment/contacts/contacts.dart';
-import 'package:project_june1/assignment/drawer.dart';
-import 'package:project_june1/class%20work/stack_ex.dart';
+import 'package:project_june1/class%20work/flutter/navdrawer.dart';
+import 'package:project_june1/class%20work/flutter/stack_ex.dart';
+// import 'package:project_june1/assignment/contacts/contacts.dart';
+// import 'package:project_june1/assignment/drawer.dart';
+// import 'package:project_june1/class%20work/stack_ex.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -47,8 +49,11 @@ class TabEx extends StatelessWidget {
           body: TabBarView(
             children: [
               StackEx(),
+              //StackEx(),
               Drawer_ex(),
-              contacts_01(),
+              contacts_01()
+              // Drawer_ex(),
+              // contacts_01(),
               // StackEx(),
               // Drawer_ex(),
               // contacts_01(),
