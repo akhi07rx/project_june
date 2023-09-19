@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:project_june1/storages%20in%20flutter/sqflite%20example/sqlhelper.dart';
+import 'package:project_june/storages%20in%20flutter/sqflite%20example/sqlhelper.dart';
 import 'LoginUi.dart';
-
 
 class Signup extends StatefulWidget {
   @override
@@ -19,14 +18,14 @@ class _SignupState extends State<Signup> {
   bool passvisibility1 = true;
   bool passvisibility2 = true;
 
-  void newuser(String name, String email, String password) async{
-    var id = await SQLHelper.newuser(name,email,password);
-    if(id != null)
-      {
-        Navigator.pushReplacement((context), MaterialPageRoute(builder: (context)=> Login()));
-      }
-    else{
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('Not Success')));
+  void newuser(String name, String email, String password) async {
+    var id = await SQLHelper1.newuser(name, email, password);
+    if (id != null) {
+      Navigator.pushReplacement(
+          (context), MaterialPageRoute(builder: (context) => Login()));
+    } else {
+      ScaffoldMessenger.of(context)
+          .showSnackBar(SnackBar(content: Text('Not Success')));
     }
   }
 
@@ -44,7 +43,9 @@ class _SignupState extends State<Signup> {
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               const Padding(
                 padding: EdgeInsets.only(left: 10, right: 10, top: 10),
                 child: Text(
@@ -52,7 +53,9 @@ class _SignupState extends State<Signup> {
                   style: TextStyle(fontSize: 10),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
@@ -64,25 +67,31 @@ class _SignupState extends State<Signup> {
                           borderRadius: BorderRadius.circular(10))),
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
-                  controller: uemail,
+                    controller: uemail,
                     decoration: InputDecoration(
                         hintText: "Email ID",
                         prefixIcon: Icon(Icons.contact_mail_outlined),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(10))),
                     validator: (username) {
-                      if (username!.isEmpty || !username.contains("@") || !username.contains(".")) {
+                      if (username!.isEmpty ||
+                          !username.contains("@") ||
+                          !username.contains(".")) {
                         return "Fields are empty or Invalid";
                       } else {
                         return null;
                       }
                     }),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
@@ -108,7 +117,6 @@ class _SignupState extends State<Signup> {
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10))),
                   validator: (pass1) {
-
                     if (pass1!.isEmpty || pass1.length < 6) {
                       return "Fields are empty or Password length must be greaterthan 6";
                     } else {
@@ -117,7 +125,9 @@ class _SignupState extends State<Signup> {
                   },
                 ),
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextFormField(
@@ -145,10 +155,9 @@ class _SignupState extends State<Signup> {
                   validator: (pass2) {
                     if (pass2!.isEmpty || pass2.length < 6) {
                       return "Password length must be greater than 6";
-                    } else if(pass.text != cpass.text) {
+                    } else if (pass.text != cpass.text) {
                       return "Password not matching";
-                    }
-                      else{
+                    } else {
                       return null;
                     }
                   },
